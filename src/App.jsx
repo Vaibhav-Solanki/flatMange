@@ -13,7 +13,6 @@ function App() {
   const navigat = useNavigate();
   const user = useSelector((el) => el.user.state);
   const page = useSelector((el) => el.page);
-  console.log(user);
   const dispatch = useDispatch();
   useEffect(() => {
     getFlate();
