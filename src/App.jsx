@@ -12,14 +12,17 @@ import { useDispatch, useSelector } from "react-redux";
 function App() {
   const navigat = useNavigate();
   const user = useSelector((el) => el.user.state);
+  const page = useSelector((el) => el.page);
   console.log(user);
   const dispatch = useDispatch();
   useEffect(() => {
     getFlate();
-  }, []);
+  }, [page]);
   const getFlate = async () => {
     try {
-      let res = await axios.get("https://flatback.herokuapp.com/flat");
+      let res = await axios.get(
+        `https://flatback.herokuapp.com/flat?page=${page}`
+      );
       dispatch({ type: "all_flat", payload: res.data.allUser });
       let res_ = await axios.get("https://flatback.herokuapp.com/res");
       dispatch({ type: "all_res", payload: res_.data.allUser });
