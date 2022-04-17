@@ -7,39 +7,39 @@ export default function Home() {
     <div>
       <Grid />
       <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">
+        <ul className="pagination justify-content-center">
+          <li className="page-item disabled">
+            <a className="page-link" href="#" tabIndex="-1">
               Previous
             </a>
           </li>
-          <li class="page-item">
+          <li className="page-item">
             <a
-              class="page-link"
+              className="page-link"
               onClick={() => dispatch({ type: "page", payload: page - 1 })}
             >
               {page - 1 > 0 ? page - 1 : page}
             </a>
           </li>
-          <li class="page-item">
+          <li className="page-item">
             <a
-              class="page-link"
+              className="page-link"
               onClick={() => dispatch({ type: "page", payload: page })}
             >
               {page}
             </a>
           </li>
-          <li class="page-item">
+          <li className="page-item">
             <a
-              class="page-link"
+              className="page-link"
               onClick={() => dispatch({ type: "page", payload: page + 1 })}
             >
               {page + 1}
             </a>
           </li>
-          <li class="page-item">
+          <li className="page-item">
             <a
-              class="page-link"
+              className="page-link"
               onClick={() => dispatch({ type: "page", payload: page + 1 })}
             >
               Next

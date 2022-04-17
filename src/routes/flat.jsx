@@ -13,7 +13,7 @@ export default function Flat() {
   const getFlate = async () => {
     try {
       let res_ = await axios.get(`https://flatback.herokuapp.com/flat/${id}`);
-      dispatch({ type: "all_res", payload: res_.data.allUser });
+      dispatch({ type: "all_res", payload: res_.data });
     } catch (error) {
       console.log(error);
     }
@@ -21,7 +21,7 @@ export default function Flat() {
   return (
     <div className="container">
       <h2 style={{ textAlign: "center" }} className="my-3">
-        All residents of Flat No :3
+        All residents of Flat
       </h2>
       <Table />
     </div>

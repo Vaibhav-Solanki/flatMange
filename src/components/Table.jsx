@@ -1,6 +1,16 @@
 import { useSelector } from "react-redux";
+import axios from "axios";
 export default function Table() {
   const flat = useSelector((e) => e.res);
+  const Delete = async (e) => {
+    const id = e.target.id;
+    try {
+      let res = await axios.delete(`https://flatback.herokuapp.com/res/${id}`);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <table className="table">
       <thead>
@@ -16,7 +26,6 @@ export default function Table() {
       <tbody>
         {flat.map(({ Name, flat, Gender, Age, _id }, key) => {
           if (flat) var { No } = flat;
-          console.log(No);
           return (
             <tr key={_id}>
               <th scope="row">{key}</th>
@@ -24,7 +33,9 @@ export default function Table() {
               <td>{No ? No : "null"}</td>
               <td>{Gender}</td>
               <td>{Age}</td>
-              <td>Delete</td>
+              <td onClick={Delete} id={_id}>
+                Delete
+              </td>
             </tr>
           );
         })}
