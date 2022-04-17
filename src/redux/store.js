@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from "redux";
 import reducer from "./reducer";
 let redusers = combineReducers({
-  store: reducer,
+  flat: reducer,
 });
 let store = createStore(
   redusers,

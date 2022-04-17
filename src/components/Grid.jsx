@@ -1,9 +1,12 @@
+import { useSelector } from "react-redux";
 export default function Grid() {
+  const flat = useSelector((e) => e.flat);
+  console.log(flat);
   return (
     <div className="container mt-5">
       <div className="row">
-        {[].map(({ Img, Type, No, Block, Resident }) => (
-          <div className="col-md-4">
+        {flat.map(({ Img, Type, No, Block, _id }) => (
+          <div className="col-md-4" key={_id}>
             <div className="card p-3">
               <div className="d-flex flex-row mb-3">
                 <img src={Img} width="70" />
