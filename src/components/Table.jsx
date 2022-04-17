@@ -14,16 +14,20 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {flat.map(({ Name, Flat, Gender, Age, _id }, key) => (
-          <tr>
-            <th scope="row">{key}</th>
-            <td>{Name}</td>
-            <td>{Flat.No}</td>
-            <td>{Gender}</td>
-            <td>{Age}</td>
-            <td>Delete</td>
-          </tr>
-        ))}
+        {flat.map(({ Name, flat, Gender, Age, _id }, key) => {
+          if (flat) var { No } = flat;
+          console.log(No);
+          return (
+            <tr key={_id}>
+              <th scope="row">{key}</th>
+              <td>{Name}</td>
+              <td>{No ? No : "null"}</td>
+              <td>{Gender}</td>
+              <td>{Age}</td>
+              <td>Delete</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

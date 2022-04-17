@@ -1,4 +1,4 @@
-const initialState = { state: false, token: "" };
+const initialState = { state: true, token: "" };
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case "login":
