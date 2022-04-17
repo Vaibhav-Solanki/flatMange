@@ -1,7 +1,8 @@
 import { GoHome } from "react-icons/go";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-
 export default function Navbar() {
+  const dispatch = useDispatch();
   return (
     <header className="p-3 bg-dark text-white">
       <div className="container">
@@ -44,7 +45,11 @@ export default function Navbar() {
             <button type="button" className="btn btn-outline-light me-2">
               Search
             </button>
-            <button type="button" className="btn btn-warning">
+            <button
+              type="button"
+              className="btn btn-warning"
+              onClick={() => dispatch({ type: "logout" })}
+            >
               Logout
             </button>
           </div>
