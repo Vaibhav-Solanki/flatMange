@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 export default function Grid() {
   const flat = useSelector((e) => e.flat);
-  console.log(flat);
   return (
     <div className="container mt-5">
       <div className="row">

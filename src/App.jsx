@@ -18,6 +18,8 @@ function App() {
     try {
       let res = await axios.get("https://flatback.herokuapp.com/flat");
       dispatch({ type: "all_flat", payload: res.data.allUser });
+      let res_ = await axios.get("https://flatback.herokuapp.com/res");
+      dispatch({ type: "all_res", payload: res_.data.allUser });
     } catch (error) {
       console.log(error);
     }

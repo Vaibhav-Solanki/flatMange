@@ -1,5 +1,6 @@
-import React from "react";
+import { useSelector } from "react-redux";
 export default function Table() {
+  const flat = useSelector((e) => e.res);
   return (
     <table className="table">
       <thead>
@@ -13,11 +14,11 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {[].map(({ Name, Flat, Gender, Age, _id }, key) => (
+        {flat.map(({ Name, Flat, Gender, Age, _id }, key) => (
           <tr>
             <th scope="row">{key}</th>
             <td>{Name}</td>
-            <td>{Flat}</td>
+            <td>{Flat.No}</td>
             <td>{Gender}</td>
             <td>{Age}</td>
             <td>Delete</td>
